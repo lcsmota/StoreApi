@@ -1,0 +1,16 @@
+CREATE DATABASE StoreDapper
+GO
+
+USE StoreDapper
+GO
+
+CREATE TABLE Stores(
+    StoreId INT PRIMARY KEY IDENTITY(1, 1),
+    StoreName VARCHAR(255) NOT NULL,
+    Phone VARCHAR(20) NOT NULL,
+    Email VARCHAR(255) NOT NULL,
+    Street VARCHAR(255) NOT NULL,
+    City VARCHAR(80) NOT NULL,
+    State VARCHAR(40) NOT NULL
+);
+GO
