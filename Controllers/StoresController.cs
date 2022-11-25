@@ -20,7 +20,7 @@ namespace StoreApi.Controllers
             return Ok(await repository.GetAllAsync());
         }
 
-        [HttpGet("{id:int}")]
+        [HttpGet("{id:int}", Name = "GetStoreById")]
         public async Task<IActionResult> GetAsync(int id)
         {
             var store = await repository.GetByIdAsync(id);
@@ -31,13 +31,13 @@ namespace StoreApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post(Store store)
+        public async Task<IActionResult> PostAsync(Store store)
         {
             if (store is null) return BadRequest("Error. Check the field(s) and try again.");
 
             await repository.AddStoreAsync(store);
 
-            return CreatedAtAction(nameof(GetAsync), new { Id = store.StoreId }, store);
+            return CreatedAtRoute("GetStoreById", new { id = store.StoreId }, store);
         }
 
         [HttpPut("{id:int}")]
