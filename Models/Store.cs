@@ -1,7 +1,10 @@
+using Dapper.Contrib.Extensions;
+
 namespace StoreApi.Models;
 
 public class Store
 {
+    [Key]
     public int StoreId { get; set; }
     public string StoreName { get; set; }
     public string Phone { get; set; }
