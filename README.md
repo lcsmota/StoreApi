@@ -111,7 +111,7 @@ GO
   POST https://localhost:7161/api/Stores
 ```
 📨  **body:**
-```
+```json
 {
   "storeName": "World Evolution",
   "phone": "334567891234",
@@ -123,7 +123,7 @@ GO
 ```
 
 🧾  **response:**
-```
+```json
 {
     "storeId": 1008,
     "storeName": "World Evolution",
@@ -163,7 +163,7 @@ GO
 | `id`      | `int` | **Mandatory**. The ID of the object you want to update|
 
 📨  **body:**
-```
+```json
 {
   "storeId": 1008,
   "storeName": "World Evolution X",
@@ -175,7 +175,7 @@ GO
 }
 ```
 🧾  **response:**
-```http
+```json
 true
 ```
 
